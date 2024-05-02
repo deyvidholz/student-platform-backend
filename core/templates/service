@@ -1,0 +1,9 @@
+import { Repository } from 'typeorm';
+import { BaseService } from '../../global/base-service';
+import { {EntityName} } from './{entity-name}.entity';
+import { {repositoryName} } from './{entity-name}.repository';
+
+
+export class {ServiceName} extends BaseService {
+  protected repository: Repository<{EntityName}> = {repositoryName};
+}

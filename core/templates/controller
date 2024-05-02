@@ -1,0 +1,41 @@
+import { Request, Response } from 'express';
+import {
+  Controller,
+  Delete,
+  Get,
+  Post,
+  Put,
+} from '../../../core/decorators/controller';
+import { BaseController } from '../../global/base-controller';
+import { {ServiceName} } from './{entity-name}.service';
+
+@Controller('/{entity-name}')
+export default class {ControllerName} extends BaseController {
+  protected service: {ServiceName} = new {ServiceName}();
+
+
+  @Get('/:id')
+  findOne = async (req: Request, res: Response) => {
+    super.findOne(req, res);
+  };
+
+  @Get('/')
+  find = async (req: Request, res: Response) => {
+    super.find(req, res);
+  };
+
+  @Post('/')
+  create = async (req: Request, res: Response) => {
+    super.create(req, res);
+  };
+
+  @Put('/:id')
+  update = async (req: Request, res: Response) => {
+    super.update(req, res)
+  };
+
+  @Delete('/:id')
+  delete = async (req: Request, res: Response) => {
+    super.delete(req, res)
+  };
+}
