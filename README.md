@@ -1,5 +1,5 @@
 <h1 align="center"> 
-	💻 Harpia (NodeJS) 💻
+	💻 Student Platform API 💻
 </h1>
 
 - [🏃 Quick Start](#-quick-start)
