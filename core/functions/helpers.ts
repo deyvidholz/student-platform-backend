@@ -33,7 +33,7 @@ export const getPaginationObject = (
   }
 
   if (!options.itemsPerPage || Number.isNaN(options.itemsPerPage)) {
-    options.itemsPerPage = 50;
+    options.itemsPerPage = 25;
   }
 
   return {

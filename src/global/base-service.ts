@@ -20,7 +20,14 @@ export class BaseService {
 
   async find(options?: FindParam) {
     const paginateOptions = getPaginationObject(options);
-    return this.repository.find(paginateOptions);
+    const [items, totalItems] = await this.repository.findAndCount(paginateOptions);
+
+    return {
+      totalItems,
+      page: options?.page || 1,
+      itemsPerPage: options?.itemsPerPage || 25,
+      items,
+    }
   }
 
   async create(payload: CreateParam) {
