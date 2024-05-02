@@ -9,7 +9,6 @@
     "build": "tsc",
     "test": "jest --passWithNoTests",
     "make:resource": "ts-node -r dotenv/config --transpile-only ./core/functions/make-resource.ts",
-    "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
     "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
     "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync"
   },
@@ -52,7 +51,6 @@
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.4",
     "typeorm-pagination": "^2.0.3",
-    "typeorm-seeding": "^1.6.1",
     "uuid": "^8.3.2"
   }
 }

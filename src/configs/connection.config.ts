@@ -15,6 +15,4 @@ export default {
   subscribers: [
     process.env.TYPEORM_DIR_SUBSCRIBERS || 'src/**/*.subscriber.{js,ts}',
   ],
-  seeds: [process.env.TYPEORM_DIR_SEEDS || 'src/**/*.seed.{js,ts}'],
-  factories: [process.env.TYPEORM_DIR_FACTORIES || 'src/**/*.factory.{js,ts}'],
 } as PostgresConnectionOptions;

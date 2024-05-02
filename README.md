@@ -24,7 +24,7 @@
 This project is a boilerplate for Nodejs/Typescript server-side applications. It already includes:
 
 - 🟢 docker-compose file including postgres and pgadmin container setup
-- 🟢 Database connection with TypeORM configured (`seeds` included)
+- 🟢 Database connection with TypeORM configured 
 - 🟢 JWT Authentication with Passport
 - 🟢 Routes configured
 - 🟢 Password encryptation
@@ -47,7 +47,6 @@ To install the dependencies, use `yarn` or `npm install`.
 
 - Start docker containers using `docker-compose up`
 - (optional) To create tables, run `yarn schema:sync` or `npm run schema:sync`
-- (optional) To create seeds, run `yarn seed:run` or `npm run seed:run`
 
 ## 🔨 Building the project
 
