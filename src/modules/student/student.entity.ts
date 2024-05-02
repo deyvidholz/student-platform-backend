@@ -4,4 +4,16 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Student {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column()
+  name: string;
+  
+  @Column()
+  email: string;
+
+  @Column({ unique: true })
+  studentId: string;
+
+  @Column({ unique: true })
+  document: string;
 }

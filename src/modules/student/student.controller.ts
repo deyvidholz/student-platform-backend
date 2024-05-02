@@ -9,7 +9,7 @@ import {
 import { BaseController } from '../../global/base-controller';
 import { StudentService } from './student.service';
 
-@Controller('/student')
+@Controller('/students')
 export default class StudentController extends BaseController {
   protected service: StudentService = new StudentService();
 
