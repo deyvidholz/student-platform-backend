@@ -2,7 +2,7 @@ import {
   getPaginationObject,
   GetPaginationObjectParam,
 } from '../../core/functions/helpers';
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 import { ResourceNotFoundException } from './exceptions/resource-not-found.exception';
 
 export class BaseService {
@@ -20,10 +20,17 @@ export class BaseService {
 
   async find(options?: FindParam) {
     const paginateOptions = getPaginationObject(options);
-    const [items, totalItems] = await this.repository.findAndCount(paginateOptions);
+
+    const [items, totalItems] = await this.repository.findAndCount({
+      ...paginateOptions,
+      where: options?.search?.length ? { name: ILike(`%${options.search}%`) } : undefined
+    });
+
+    const totalPages = Math.ceil(totalItems / (options?.itemsPerPage || 25));
 
     return {
       totalItems,
+      totalPages,
       page: options?.page || 1,
       itemsPerPage: options?.itemsPerPage || 25,
       items,

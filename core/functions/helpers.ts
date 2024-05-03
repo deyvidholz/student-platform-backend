@@ -48,4 +48,5 @@ export const getPaginationObject = (
 export type GetPaginationObjectParam = {
   itemsPerPage?: number;
   page?: number;
+  search?: string;
 };

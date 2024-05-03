@@ -42,6 +42,7 @@ export abstract class BaseController {
         this.service.find({
           itemsPerPage: Number(req.query['itemsPerPage']),
           page: Number(req.query['page']),
+          search: req.query['search'] as string,
         }),
       res,
     });
